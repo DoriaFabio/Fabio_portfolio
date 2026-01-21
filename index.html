@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./image/logo.ico" type="image/x-icon">
+    <!--? Font Awesome -->
+    <script src="https://kit.fontawesome.com/9fc1af3224.js" crossorigin="anonymous"></script>
+    <!--? Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Fabio Doria Portfolio</title>
+</head>
+
+<body>
+    <header class="flex justify-between bg-[#1C1933] items-center lg:py-5 py-1 lg:px-8 px-2">
+        <img src="./image/logo2.png" alt="logo Fabio Doria" width="80" height="80" class="lg:hidden">
+        <div class="hidden text-[17px] gap-10 items-center pr-5 text-white font-semibold lg:flex">
+            <h2>About</h2>
+            <h2>Projects</h2>
+            <h2>Contact</h2>
+        </div>
+
+        <!-- Hamburger Menu Button -->
+        <button id="hamburger-btn" class="lg:hidden text-white text-2xl focus:outline-none">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Sidebar Mobile -->
+    <aside id="sidebar"
+        class="fixed top-22 right-0 w-64 h-screen bg-[#1C1933] text-white transform translate-x-full transition-transform duration-300 lg:hidden z-40">
+        <div class="flex flex-col p-6 gap-8">
+            <h2 class="text-xl font-semibold hover:text-blue-400 cursor-pointer">About</h2>
+            <h2 class="text-xl font-semibold hover:text-blue-400 cursor-pointer">Projects</h2>
+            <h2 class="text-xl font-semibold hover:text-blue-400 cursor-pointer">Contact</h2>
+        </div>
+    </aside>
+
+    <!-- Overlay per chiudere sidebar -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden lg:hidden z-30"></div>
+
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        hamburgerBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('translate-x-full');
+            overlay.classList.toggle('hidden');
+        });
+
+        overlay.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        });
+
+        // Chiudi sidebar al click su una voce di menu
+        const menuItems = sidebar.querySelectorAll('h2');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                sidebar.classList.add('translate-x-full');
+                overlay.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+
+</html>
