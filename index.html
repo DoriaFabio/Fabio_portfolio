@@ -9,16 +9,20 @@
     <script src="https://kit.fontawesome.com/9fc1af3224.js" crossorigin="anonymous"></script>
     <!--? Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Fabio Doria Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <title>Fabio Doria Website</title>
 </head>
 
 <body>
-    <header class="flex justify-between bg-[#1C1933] items-center lg:py-5 py-1 lg:px-8 px-2">
-        <img src="./image/logo2.png" alt="logo Fabio Doria" width="80" height="80" class="lg:hidden">
-        <div class="hidden text-[17px] gap-10 items-center pr-5 text-white font-semibold lg:flex">
-            <h2>About</h2>
-            <h2>Projects</h2>
-            <h2>Contact</h2>
+    <header class="flex justify-between bg-[#1C193300] items-center pt-5 md:px-8 px-5 fixed z-50 w-full top-0">
+        <div class="flex gap-2 items-center">
+            <h2 class="text-white font-bold text-2xl">Fabio</h2>
+            <h2 class="text-[#FF0642] font-bold text-2xl">Doria</h2>
+        </div>
+        <div class="hidden gap-10 items-center pr-5 text-white font-semibold lg:flex">
+            <a href="#about" class="text-xl font-semibold text-white hover:text-blue-400">About</a>
+            <a href="#projects" class="text-xl font-semibold hover:text-blue-400 cursor-pointer">Projects</a>
+            <a href="#contact" class="text-xl font-semibold hover:text-blue-400">Contact</a>
         </div>
 
         <!-- Hamburger Menu Button -->
@@ -29,41 +33,41 @@
 
     <!-- Sidebar Mobile -->
     <aside id="sidebar"
-        class="fixed top-22 right-0 w-64 h-screen bg-[#1C1933] text-white transform translate-x-full transition-transform duration-300 lg:hidden z-40">
+        class="fixed top-16 right-0 w-64 h-[calc(100vh-60px)] bg-[#0E1029] text-white transform translate-x-full transition-transform duration-300 lg:hidden z-40">
         <div class="flex flex-col p-6 gap-8">
-            <h2 class="text-xl font-semibold hover:text-blue-400 cursor-pointer">About</h2>
-            <h2 class="text-xl font-semibold hover:text-blue-400 cursor-pointer">Projects</h2>
-            <h2 class="text-xl font-semibold hover:text-blue-400 cursor-pointer">Contact</h2>
+            <a href="#about" class="text-xl font-semibold text-white hover:text-blue-400">About</a>
+            <a href="#projects" class="text-xl font-semibold hover:text-blue-400 cursor-pointer">Projects</a>
+            <a href="#contact" class="text-xl font-semibold hover:text-blue-400">Contact</a>
         </div>
     </aside>
 
     <!-- Overlay per chiudere sidebar -->
-    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden lg:hidden z-30"></div>
+    <div id="overlay" class="fixed inset-0 top-22 bg-black bg-opacity-50 hidden lg:hidden z-30"></div>
 
-    <script>
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('overlay');
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen" style="background: linear-gradient(to bottom left, #0A119B, #14205a, #222245, #551212, #9A0619);">
+        <div class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between min-h-screen px-8 lg:px-20 md:px-20">
+            <!-- Text Content - Left Side -->
+            <div class="flex flex-col text-white md:text-left text-center md:w-1/2 pt-10 lg:pt-0 lg:pl-10">
+                <h1 class="text-4xl lg:text-5xl md:text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
+                <p class="text-lg lg:text-2xl mb-8">I'm Fabio Doria, a junior Full-stack Web Developer.</p>
+                <div class="flex gap-4 md:justify-start justify-center">
+                    <a href="#projects" class="bg-[#FF0642] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">View My Work</a>
+                    <a href="#contact" class="border-2 border-white hover:bg-white hover:text-[#222245] text-white font-bold py-3 px-6 rounded-full transition duration-300">CV</a>
+                </div>
+            </div>
+            <!-- Image Placeholder - Right Side -->
+            <div class="lg:w-1/2 flex justify-center mt-20 lg:mt-0">
+                <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full p-2" style="background: linear-gradient(135deg, #FF0169, #BB4499, #3EC6F7);">
+                    <div class="w-full h-full rounded-full bg-gray-300 flex items-center justify-center">
+                        <img src="./image/fabio.png" alt="Fabio" class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        hamburgerBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('translate-x-full');
-            overlay.classList.toggle('hidden');
-        });
-
-        overlay.addEventListener('click', () => {
-            sidebar.classList.add('translate-x-full');
-            overlay.classList.add('hidden');
-        });
-
-        // Chiudi sidebar al click su una voce di menu
-        const menuItems = sidebar.querySelectorAll('h2');
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                sidebar.classList.add('translate-x-full');
-                overlay.classList.add('hidden');
-            });
-        });
-    </script>
+    <script src="./overlay.js"></script>
 </body>
 
 </html>
