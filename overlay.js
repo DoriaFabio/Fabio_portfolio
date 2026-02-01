@@ -1,26 +1,27 @@
 // Sidebar mobile toggle functionality
-
 const hamburgerBtn = document.getElementById('hamburger-btn'); 
 const sidebar = document.getElementById('sidebar'); 
-const overlay = document.getElementById('overlay');
+const overlay_sidebar = document.getElementById('overlay-sidebar');
 
-if (hamburgerBtn && sidebar && overlay) {
+if (hamburgerBtn && sidebar && overlay_sidebar) {
+    // Apri/Chiudi sidebar al click sull'hamburger button
     hamburgerBtn.addEventListener('click', () => {
         sidebar.classList.toggle('translate-x-full');
-        overlay.classList.toggle('hidden');
+        overlay_sidebar.classList.toggle('hidden');
     });
 
-    overlay.addEventListener('click', () => {
+    // Chiudi sidebar al click sull'overlay
+    overlay_sidebar.addEventListener('click', () => {
         sidebar.classList.add('translate-x-full');
-        overlay.classList.add('hidden');
+        overlay_sidebar.classList.add('hidden');
     });
 
     // Chiudi sidebar al click su una voce di menu
-    const menuItems = sidebar.querySelectorAll('h2');
+    const menuItems = sidebar.querySelectorAll('a');
     menuItems.forEach((item) => {
         item.addEventListener('click', () => {
             sidebar.classList.add('translate-x-full');
-            overlay.classList.add('hidden');
+            overlay_sidebar.classList.add('hidden');
         });
     });
 }
@@ -70,8 +71,8 @@ function updateCv(index) {
 }
 
 function closeOverlay() {
-    cvOverlay.classList.add('hidden');
-    cvOverlay.classList.remove('flex');
+    cvOverlay.classList.add('opacity-0', 'pointer-events-none');
+    cvOverlay.classList.remove('opacity-100 pointer-events-auto');
     document.body.style.overflow = '';
 }
 
@@ -79,8 +80,8 @@ if (cvBtn && cvOverlay && cvCloseBtn) {
     cvBtn.addEventListener('click', () => {
         currentCvIndex = 0;
         updateCv(0);
-        cvOverlay.classList.remove('hidden');
-        cvOverlay.classList.add('flex');
+        cvOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        cvOverlay.classList.add('opacity-100 pointer-events-auto');
         document.body.style.overflow = 'hidden';
     });
 
@@ -128,7 +129,7 @@ if (cvBtn && cvOverlay && cvCloseBtn) {
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-        if (!cvOverlay.classList.contains('hidden')) {
+        if (!cvOverlay.classList.contains('pointer-events-none')) {
             if (e.key === 'ArrowLeft') {
                 const newIndex = currentCvIndex === 0 ? cvData.length - 1 : currentCvIndex - 1;
                 updateCv(newIndex);
