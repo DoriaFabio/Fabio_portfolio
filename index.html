@@ -14,24 +14,25 @@
 </head>
 
 <body>
-    <header class="flex justify-between bg-[#1C193300] items-center pt-5 md:px-8 px-5 fixed z-50 w-full top-0">
-        <div class="flex gap-2 items-center">
-            <h2 class="text-white font-bold text-2xl">Fabio</h2>
-            <h2 class="text-[#FF0642] font-bold text-2xl">Doria</h2>
-        </div>
-        <div class="hidden gap-10 items-center pr-5 text-white font-semibold lg:flex">
-            <a href="#about" class="text-xl font-semibold text-white hover:text-blue-400">About</a>
-            <a href="#projects" class="text-xl font-semibold hover:text-blue-400 cursor-pointer">Projects</a>
-            <a href="#contact" class="text-xl font-semibold hover:text-blue-400">Contact</a>
-        </div>
+    <!--! Header -->
+    <header class="fixed top-0 z-50 w-full flex justify-between items-center pt-5 px-5 md:px-8 bg-transparent">
+        <a href="#" class="flex gap-2 items-center">
+            <span class="text-white font-bold text-2xl">Fabio</span>
+            <span class="text-[#FF0642] font-bold text-2xl">Doria</span>
+        </a>
 
-        <!-- Hamburger Menu Button -->
-        <button id="hamburger-btn" class="lg:hidden text-white text-2xl focus:outline-none">
+        <nav class="hidden lg:flex gap-10 items-center pr-5 text-white font-semibold">
+            <a href="#about" class="text-xl hover:text-blue-400">About</a>
+            <a href="#projects" class="text-xl hover:text-blue-400">Projects</a>
+            <a href="#contact" class="text-xl hover:text-blue-400">Contact</a>
+        </nav>
+
+        <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-white text-2xl">
             <i class="fa-solid fa-bars"></i>
         </button>
     </header>
-
-    <!-- Sidebar Mobile -->
+    
+    <!--! Sidebar Mobile -->
     <aside id="sidebar"
         class="fixed top-16 right-0 w-64 h-[calc(100vh-60px)] bg-[#0E1029] text-white transform translate-x-full transition-transform duration-300 lg:hidden z-40">
         <div class="flex flex-col p-6 gap-8">
@@ -41,24 +42,71 @@
         </div>
     </aside>
 
-    <!-- Overlay per chiudere sidebar -->
+    <!--! Overlay sidebar -->
     <div id="overlay" class="fixed inset-0 top-22 bg-black bg-opacity-50 hidden lg:hidden z-30"></div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen" style="background: linear-gradient(to bottom left, #0A119B, #14205a, #222245, #551212, #9A0619);">
-        <div class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between min-h-screen px-8 lg:px-20 md:px-20">
-            <!-- Text Content - Left Side -->
+    <!--! CV Overlay -->
+    <div id="cv-overlay" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50">
+        <div class="relative w-full h-full flex flex-col">
+            <!--? Header con bottoni -->
+            <div class="flex justify-between items-center p-4 bg-[#1C1933]">
+                <a id="cv-download-btn" href="./image/Fabio Doria CV.pdf" download
+                    class="flex items-center gap-2 bg-[#FF0642] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                    <i class="fa-solid fa-download"></i>
+                    Download CV
+                </a>
+                <span id="cv-title" class="text-white font-semibold text-lg hidden md:block">CV Italiano</span>
+                <button id="cv-close-btn" class="text-white text-3xl hover:text-red-500 transition duration-300">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!--? CV Carousel -->
+            <div class="flex-1 w-full flex items-center justify-center relative overflow-hidden">
+                <!--? Freccia sinistra -->
+                <button id="cv-prev"
+                    class="absolute left-2 md:left-8 z-10 text-white text-4xl md:text-5xl hover:text-[#FF0642] transition duration-300">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <!--? Container immagini -->
+                <div id="cv-carousel" class="h-full flex items-center justify-center px-16 md:px-24">
+                    <img id="cv-image" src="./image/Fabio Doria CV.png" alt="CV"
+                        class="max-h-full max-w-full object-contain">
+                </div>
+                <!--? Freccia destra -->
+                <button id="cv-next"
+                    class="absolute right-2 md:right-8 z-10 text-white text-4xl md:text-5xl hover:text-[#FF0642] transition duration-300">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <!--? Indicatori -->
+            <div class="flex justify-center gap-3 pb-4">
+                <span id="dot-0" class="w-3 h-3 rounded-full bg-[#FF0642] cursor-pointer"></span>
+                <span id="dot-1" class="w-3 h-3 rounded-full bg-gray-500 cursor-pointer"></span>
+            </div>
+        </div>
+    </div>
+
+    <!--! Hero Section -->
+    <section id="hero" class="min-h-screen"
+        style="background: linear-gradient(to bottom left, #0A119B, #14205a, #222245, #551212, #9A0619);">
+        <div
+            class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between min-h-screen px-8 lg:px-20 md:px-20">
+            <!--? Text Content - Left Side -->
             <div class="flex flex-col text-white md:text-left text-center md:w-1/2 pt-10 lg:pt-0 lg:pl-10">
                 <h1 class="text-4xl lg:text-5xl md:text-4xl font-bold mb-4">Welcome to My Portfolio</h1>
                 <p class="text-lg lg:text-2xl mb-8">I'm Fabio Doria, a junior Full-stack Web Developer.</p>
                 <div class="flex gap-4 md:justify-start justify-center">
-                    <a href="#projects" class="bg-[#FF0642] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">View My Work</a>
-                    <a href="#contact" class="border-2 border-white hover:bg-white hover:text-[#222245] text-white font-bold py-3 px-6 rounded-full transition duration-300">CV</a>
+                    <a href="#projects"
+                        class="bg-[#FF0642] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">View
+                        My Work</a>
+                    <button id="cv-btn"
+                        class="border-2 border-white hover:bg-white hover:text-[#222245] text-white font-bold py-3 px-6 rounded-full transition duration-300">CV</button>
                 </div>
             </div>
-            <!-- Image Placeholder - Right Side -->
+            <!--? Image Placeholder - Right Side -->
             <div class="lg:w-1/2 flex justify-center mt-20 lg:mt-0">
-                <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full p-2" style="background: linear-gradient(135deg, #FF0169, #BB4499, #3EC6F7);">
+                <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full p-2"
+                    style="background: linear-gradient(135deg, #FF0169, #BB4499, #3EC6F7);">
                     <div class="w-full h-full rounded-full bg-gray-300 flex items-center justify-center">
                         <img src="./image/fabio.png" alt="Fabio" class="w-full h-full object-cover rounded-full">
                     </div>
