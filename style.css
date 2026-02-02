@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+.gradient-accent {
+    background: linear-gradient(135deg, #FF0642, #3EC6F7);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #FF0642, #3EC6F7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-bg {
+    background: linear-gradient(230deg,
+        #0c16d2,
+        #12155a,
+        #1a1845,
+        #261535,
+        #35122d,
+        #4a1025,
+        #65101c,
+        #9A0619
+    );
+}

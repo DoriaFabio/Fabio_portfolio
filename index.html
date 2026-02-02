@@ -1,122 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio di Fabio Doria, Junior Full-stack Web Developer">
+    <!--todo Favicon -->
     <link rel="icon" href="./image/logo.ico" type="image/x-icon">
-    <!--? Font Awesome -->
-    <script src="https://kit.fontawesome.com/9fc1af3224.js" crossorigin="anonymous"></script>
-    <!--? Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!--todo Styles -->
     <link rel="stylesheet" href="./style.css">
-    <title>Fabio Doria Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--todo Font Awesome -->
+    <script src="https://kit.fontawesome.com/9fc1af3224.js" crossorigin="anonymous"></script>
+    <title>Fabio Doria - Portfolio</title>
 </head>
 
-<body>
-    <!--! Header -->
-    <header class="fixed top-0 z-40 w-full flex justify-between items-center pt-5 px-5 md:px-8 bg-transparent">
+<body class="gradient-bg">
+    <!--! ==================== SIDEBAR (Mobile) ==================== -->
+    <aside id="sidebar" aria-hidden="true" aria-label="Mobile navigation"
+        class="fixed top-16 right-0 w-64 h-[calc(100vh-64px)] bg-[#0E1029] text-white transform translate-x-full transition-transform duration-300 ease-out lg:hidden z-40">
+        <div class="flex flex-col p-6 gap-8 text-xl font-semibold">
+            <a href="#about" class="focus:text-[#FF0642]">About</a>
+            <a href="#projects" class="focus:text-[#FF0642]">Projects</a>
+            <a href="#contact" class="focus:text-[#FF0642]">Contact</a>
+        </div>
+    </aside>
+
+    <!-- Sidebar Overlay -->
+    <div id="overlay-sidebar" class="fixed inset-0 top-22 bg-black bg-opacity-70 hidden lg:hidden z-30"></div>
+
+    <!--! ==================== HEADER ==================== -->
+    <header class="fixed top-0 z-40 w-full flex justify-between items-center py-5 px-5 md:px-8 bg-black/30 backdrop-blur-[10px] shadow-md">
         <!--? Logo -->
         <a href="#" class="flex gap-2 items-center">
             <span class="text-white font-bold text-2xl">Fabio</span>
             <span class="text-[#FF0642] font-bold text-2xl">Doria</span>
         </a>
-        <!--? Nav Menu -->
+
+        <!--? Nav Menu (Desktop) -->
         <nav class="hidden lg:flex gap-10 items-center pr-5 text-white font-semibold">
-            <a href="#about" class="text-xl hover:text-blue-400 transition-colors duration-500">About</a>
-            <a href="#projects" class="text-xl hover:text-blue-400 transition-colors duration-500">Projects</a>
-            <a href="#contact" class="text-xl hover:text-blue-400 transition-colors duration-500">Contact</a>
+            <a href="#about" class="text-xl hover:text-[#FF0642] transition-colors duration-500">About</a>
+            <a href="#projects" class="text-xl hover:text-[#FF0642] transition-colors duration-500">Projects</a>
+            <a href="#contact" class="text-xl hover:text-[#FF0642] transition-colors duration-500">Contact</a>
         </nav>
-        <!--? Hamburger Menu Button -->
+
+        <!--? Hamburger Menu (Mobile) -->
         <button id="hamburger-btn" aria-label="Open menu" aria-expanded="false" class="lg:hidden text-white text-2xl">
             <i class="fa-solid fa-bars"></i>
         </button>
     </header>
 
-    <aside id="sidebar" aria-hidden="true" aria-label="Mobile navigation" class="fixed top-16 right-0 w-64 h-[calc(100vh-64px)] bg-[#0E1029] text-white
-         transform translate-x-full transition-transform duration-300 ease-out
-         lg:hidden z-40">
-        <div class="flex flex-col p-6 gap-8 text-xl font-semibold">
-            <a href="#about" class="hover:text-blue-400">About</a>
-            <a href="#projects" class="hover:text-blue-400">Projects</a>
-            <a href="#contact" class="hover:text-blue-400">Contact</a>
+    <!--! ==================== HERO SECTION ==================== -->
+    <section id="hero" class="min-h-screen" aria-label="Introduction">
+        <div
+            class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between min-h-screen px-8 md:px-20">
+
+            <!--? Hero Text -->
+            <div class="flex flex-col text-white md:text-left text-center md:w-1/2 pt-10 lg:pt-0 lg:pl-10">
+                <h1 class="text-4xl lg:text-5xl md:text-4xl font-extrabold mb-4">Welcome to my Portfolio</h1>
+                <p class="text-lg lg:text-2xl mb-8 font-bold">I'm Fabio Doria, a junior Full-stack Web Developer.</p>
+                <div class="flex gap-4 md:justify-start justify-center">
+                    <a href="#projects"
+                        class="bg-[#FF0642] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                        View My Work
+                    </a>
+                    <button id="cv-btn"
+                        class="border-2 border-white hover:bg-white hover:text-[#222245] text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                        View CV
+                    </button>
+                </div>
+            </div>
+
+            <!--? Hero Image -->
+            <div class="lg:w-1/2 flex justify-center mt-20 lg:mt-0">
+                <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full p-2 gradient-accent">
+                    <div class="w-full h-full rounded-full bg-gray-300 flex items-center justify-center">
+                        <img src="./image/fabio.png" alt="Fabio Doria"
+                            class="w-full h-full object-cover rounded-full shadow-2xl">
+                    </div>
+                </div>
+            </div>
         </div>
-    </aside>
-
-    <!--! Overlay sidebar -->
-    <div id="overlay-sidebar" class="fixed inset-0 top-22 bg-black bg-opacity-70 hidden lg:hidden z-30"></div>
-
-    <!--! CV Overlay -->
+    </section>
+    <!--! ==================== CV OVERLAY ==================== -->
     <div id="cv-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cv-title"
         class="fixed inset-0 bg-black bg-opacity-90 opacity-0 pointer-events-none z-50 transition-opacity duration-300">
         <div class="relative w-full h-full flex flex-col">
-            <!--? Header con bottoni -->
-            <div class="flex justify-between items-center p-4 bg-[#1C1933]">
+
+            <!--? CV Header -->
+            <div class="relative flex justify-between items-center p-4 bg-transparent">
                 <a id="cv-download-btn" href="./image/Fabio Doria CV.pdf" download
-                    class="flex items-center gap-2 bg-[#FF0642] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                    class="flex items-center gap-2 bg-[#FF0642] hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 z-10">
                     <i class="fa-solid fa-download"></i>
                     Download CV
                 </a>
-                <span id="cv-title" class="text-white font-semibold text-lg hidden md:block">CV Italiano</span>
-                <button id="cv-close-btn" class="text-white text-3xl hover:text-red-500 transition duration-300">
+                <span id="cv-title"
+                    class="absolute left-1/2 -translate-x-1/2 text-white font-semibold text-lg hidden md:block">Italian
+                    CV</span>
+                <button id="cv-close-btn" class="text-white text-3xl hover:text-red-500 transition duration-300 z-10">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
+
             <!--? CV Carousel -->
             <div class="flex-1 w-full flex items-center justify-center relative overflow-hidden">
-                <!--? Freccia sinistra -->
                 <button id="cv-prev"
                     class="absolute left-2 md:left-8 z-10 text-white text-4xl md:text-5xl hover:text-[#FF0642] transition duration-300">
                     <i class="fa-solid fa-chevron-left"></i>
                 </button>
-                <!--? Container immagini -->
+
                 <div id="cv-carousel" class="h-full flex items-center justify-center px-16 md:px-24">
                     <img id="cv-image" src="./image/Fabio Doria CV.png" alt="CV"
                         class="max-h-full max-w-full object-contain">
                 </div>
-                <!--? Freccia destra -->
+
                 <button id="cv-next"
                     class="absolute right-2 md:right-8 z-10 text-white text-4xl md:text-5xl hover:text-[#FF0642] transition duration-300">
                     <i class="fa-solid fa-chevron-right"></i>
                 </button>
             </div>
-            <!--? Indicatori -->
+
+            <!--? CV Indicators -->
             <div class="flex justify-center gap-3 pb-4">
                 <span id="dot-0" class="w-3 h-3 rounded-full bg-[#FF0642] cursor-pointer"></span>
                 <span id="dot-1" class="w-3 h-3 rounded-full bg-gray-500 cursor-pointer"></span>
             </div>
         </div>
     </div>
-
-    <!--! Hero Section -->
-    <section id="hero" class="min-h-screen" aria-label="Introduction"
-        style="background: linear-gradient(to bottom left, #0A119B, #14205a, #222245, #551212, #9A0619);">
-        <div
-            class="flex flex-col-reverse md:flex-row items-center justify-center md:justify-between min-h-screen px-8 lg:px-20 md:px-20">
-            <!--? Text Content - Left Side -->
-            <div class="flex flex-col text-white md:text-left text-center md:w-1/2 pt-10 lg:pt-0 lg:pl-10">
-                <h1 class="text-4xl lg:text-5xl md:text-4xl font-extrabold mb-4">Welcome to my Portfolio</h1>
-                <p class="text-lg lg:text-2xl mb-8 font-bold">I'm Fabio Doria, a junior Full-stack Web Developer.</p>
-                <div class="flex gap-4 md:justify-start justify-center">
-                    <a href="#projects"
-                        class="bg-[#FF0642] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">View
-                        My Work</a>
-                    <button id="cv-btn"
-                        class="border-2 border-white hover:bg-white hover:text-[#222245] text-white font-bold py-3 px-6 rounded-full transition duration-300">CV</button>
-                </div>
-            </div>
-            <!--? Image Placeholder - Right Side -->
-            <div class="lg:w-1/2 flex justify-center mt-20 lg:mt-0">
-                <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full p-2"
-                    style="background: linear-gradient(135deg, #FF0169, #BB4499, #3EC6F7);">
-                    <div class="w-full h-full rounded-full bg-gray-300 flex items-center justify-center">
-                        <img src="./image/fabio.png" alt="Fabio" class="w-full h-full object-cover rounded-full">
-                    </div>
-                </div>
-            </div>
+    <!--! ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="px-8 md:px-20 my-16" aria-label="About me">
+        <h2 class="text-4xl font-bold text-center py-5 gradient-text text-shadow-md/30 text-shadow-black">Chi sono</h2>
+        <div class="text-[18px] text-white/80 text-justify max-w-5xl mx-auto leading-7">
+            <p>
+                🎓 Ho scoperto la programmazione lato web frequentando l'università di ingegneria gestionale. Grazie
+                alla curiosità di imparare di più, ho deciso di interromperla per cercare un percorso più pratico e orientato
+                al lavoro e questo mi ha portato a frequentare un corso di programmazione.
+            </p>
+            <br>
+            <p>
+                👨🏻‍💻 La mia scelta è ricaduta su Boolean. Ho scelto questo corso perché mi è sembrato più pratico e
+                affidabile. Durante questo corso ho ampliato la mia conoscenza in questo settore grazie a lezioni
+                teoriche e progetti che aiutavano a capire meglio i concetti.
+            </p>
+            <br>
+            <p>
+                🌐 Ho sviluppato web App sia da solo che in team e questo mi ha insegnato a lavorare meglio in gruppo e
+                ad appassionarmi ancora di più in questo settore. La cosa più bella è vedere il sito completo, che sia
+                sviluppato in team o individualmente, e pensare di aver costruito qualcosa di bello e coinvolgente per
+                un utente che un giorno lo visualizzerà e che non avrà problemi a utilizzare.
+            </p>
+            <br>
+            <p>
+                🎯 Il mio obiettivo oggi è imparare ancora di più, conoscere nuovi linguaggi/framework e approfondire
+                quelli che già conosco facendo sempre pratica sviluppando nuovi progetti. Sono all'inizio ma sto già lavorando
+                per crescere e migliorarmi ogni giorno.
+            </p>
         </div>
     </section>
-
+    <!--! ==================== TECH SKILLS SECTION ==================== -->
+    <section id="techSkills" class="px-8 md:px-20 my-16" aria-label="Technologies used">
+        <h2 class="text-4xl font-bold text-center py-5 gradient-text text-shadow-md/30 text-shadow-black">Tecnologie usate</h2>
+        <div id="tech-container" class="flex flex-wrap justify-center gap-6 mt-8 max-w-5xl mx-auto"></div>
+    </section>
+    <script src="./tech.js"></script>
     <script src="./overlay.js"></script>
 </body>
 
