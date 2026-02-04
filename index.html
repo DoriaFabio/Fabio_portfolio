@@ -20,9 +20,9 @@
     <aside id="sidebar" aria-hidden="true" aria-label="Mobile navigation"
         class="fixed top-16 right-0 w-64 h-[calc(100vh-64px)] bg-[#0E1029] text-white transform translate-x-full transition-transform duration-300 ease-out lg:hidden z-40">
         <div class="flex flex-col p-6 gap-8 text-xl font-semibold">
-            <a href="#about" class="focus:text-[#FF0642]">About</a>
-            <a href="#projects" class="focus:text-[#FF0642]">Projects</a>
-            <a href="#contact" class="focus:text-[#FF0642]">Contact</a>
+            <a href="#about" class="focus:text-[#FF0642]">Chi sono</a>
+            <a href="#projects" class="focus:text-[#FF0642]">Progetti</a>
+            <a href="#contact" class="focus:text-[#FF0642]">Contatti</a>
         </div>
     </aside>
 
@@ -39,9 +39,9 @@
 
         <!--? Nav Menu (Desktop) -->
         <nav class="hidden lg:flex gap-10 items-center pr-5 text-white font-semibold">
-            <a href="#about" class="text-xl hover:text-[#FF0642] transition-colors duration-500">About</a>
-            <a href="#projects" class="text-xl hover:text-[#FF0642] transition-colors duration-500">Projects</a>
-            <a href="#contact" class="text-xl hover:text-[#FF0642] transition-colors duration-500">Contact</a>
+            <a href="#about" class="text-xl hover:text-[#FF0642] transition-colors duration-500">Chi sono</a>
+            <a href="#projects" class="text-xl hover:text-[#FF0642] transition-colors duration-500">Progetti</a>
+            <a href="#contact" class="text-xl hover:text-[#FF0642] transition-colors duration-500">Contatti</a>
         </nav>
 
         <!--? Hamburger Menu (Mobile) -->
@@ -57,16 +57,16 @@
 
             <!--? Hero Text -->
             <div class="flex flex-col text-white md:text-left text-center md:w-1/2 pt-10 lg:pt-0 lg:pl-10">
-                <h1 class="text-4xl lg:text-5xl md:text-4xl font-extrabold mb-4">Welcome to my Portfolio</h1>
-                <p class="text-lg lg:text-2xl mb-8 font-bold">I'm Fabio Doria, a junior Full-stack Web Developer.</p>
+                <h1 class="text-4xl lg:text-5xl md:text-4xl font-extrabold mb-4">Benvenuti nel mio Portfolio</h1>
+                <p class="text-lg lg:text-2xl mb-8 font-bold">Mi chiamo Fabio Doria e sono un junior Full-stack Web Developer.</p>
                 <div class="flex gap-4 md:justify-start justify-center">
                     <a href="#projects"
-                        class="bg-[#FF0642] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-                        View My Work
+                        class="bg-[#FF0642] hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 cursor-pointer">
+                        I miei progetti
                     </a>
                     <button id="cv-btn"
                         class="border-2 border-white hover:bg-white hover:text-[#222245] text-white font-bold py-3 px-6 rounded-full transition duration-300">
-                        View CV
+                        Vedi CV
                     </button>
                 </div>
             </div>
@@ -162,8 +162,14 @@
         <h2 class="text-4xl font-bold text-center py-5 gradient-text text-shadow-md/30 text-shadow-black">Tecnologie usate</h2>
         <div id="tech-container" class="flex flex-wrap justify-center gap-6 mt-8 max-w-5xl mx-auto"></div>
     </section>
+    <!--! ==================== PROJECTS SECTION ==================== -->
+    <section id="projects" class="px-8 md:px-20 my-16" aria-label="Projects">
+        <h2 class="text-4xl font-bold text-center py-5 gradient-text text-shadow-md/30 text-shadow-black">I miei progetti</h2>
+        <div id="projects-container" class="flex flex-col gap-8 mt-8 max-w-4xl mx-auto"></div>
+    </section>
     <script src="./tech.js"></script>
     <script src="./overlay.js"></script>
+    <script src="./project.js"></script>
 </body>
 
 </html>
