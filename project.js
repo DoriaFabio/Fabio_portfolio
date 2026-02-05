@@ -1,19 +1,19 @@
 const projects = [
     {
         title: "Bool B&B",
-        description: "Replica di una pattaforma per la ricerca e gestione di immobili in affitto.",
+        description: "Replica of a webApp for searching and managing rental properties.",
         imageUrl: "./image/mockup.png",
         projectUrl: "",
     },
     {
         title: "Boolflix",
-        description: "Piattaforma di streaming video che offre una vasta selezione di film e serie TV.",
+        description: "Video streaming platform offering a wide selection of movies and TV series.",
         imageUrl: "./image/mockup.png",
         projectUrl: "",
     },
     {
         title: "Yogakounseling",
-        description: "Sito vetrina per un servizio di yoga counseling",
+        description: "Showcase website for a yoga counseling service.",
         imageUrl: "./image/mockup.png",
         projectUrl: "",
     },
