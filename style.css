@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Abilita lo smooth scrolling per i link alle sezioni */
+html {
+    scroll-behavior: smooth;
+}
+
 .gradient-accent {
     background: linear-gradient(135deg, #FF0642, #3EC6F7);
 }

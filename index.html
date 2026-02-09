@@ -83,6 +83,12 @@
                 </div>
             </div>
         </div>
+        <!--? Arrow Down -->
+        <a href="#about"
+            class="inline-block absolute bottom-8 left-1/2 -translate-x-1/2 text-white text-3xl cursor-pointer">
+            <i class="fa-solid fa-chevron-down animate-bounce transition-all duration-300 hover:text-[#FF0642]"></i>
+        </a>
+
     </section>
     <!--! ==================== CV OVERLAY ==================== -->
     <div id="cv-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="cv-title"
@@ -191,10 +197,12 @@
 
                 <!-- Checkbox consenso GDPR -->
                 <div class="mt-2 flex">
-                    <input type="checkbox" id="privacyConsent" required class="w-4 mx-1 accent-blue-700 focus:ring-blue-500">
+                    <input type="checkbox" id="privacyConsent" required
+                        class="w-4 mx-1 accent-blue-700 focus:ring-blue-500">
                     <label for="privacyConsent" class="text-[16px]">
                         Ho letto e accetto la
-                        <a href="./privacy.html" class="underline text-gray-300 hover:text-red-500 transition-colors duration-300"
+                        <a href="./privacy.html"
+                            class="underline text-gray-300 hover:text-red-500 transition-colors duration-300"
                             target="_blank">Privacy Policy</a>.
                     </label>
                 </div>
@@ -208,20 +216,47 @@
             </form>
         </div>
     </section>
-            <!--! Notifica !-->
-            <div id="formResponse" class="hidden text-green-700 absolute top-5 right-5 p-3 bg-amber-50 rounded-2xl">
-                ✅ Messaggio inviato con successo!
-            </div>
-            <div id="formResponseError" class="hidden text-red-700 absolute top-5 right-5 p-3 bg-red-100 rounded-2xl">
-                ❌ Errore nell'invio. Riprova più tardi.
-            </div>
-            <div id="formNotConnection"
-                class="hidden text-yellow-600 absolute top-5 right-5 p-3 bg-yellow-100 rounded-2xl">
-                ⚠️ Errore di connessione, riprova più tardi.
-            </div>
-            <script src="./tech.js"></script>
-            <script src="./overlay.js"></script>
-            <script src="./project.js"></script>
+    <!--! Notifica !-->
+    <div id="formResponse" class="hidden text-green-700 absolute top-5 left-5 p-3 bg-amber-50 rounded-2xl z-50">
+        ✅ Messaggio inviato con successo!
+    </div>
+    <div id="formResponseError" class="hidden text-red-700 absolute top-5 left-5 p-3 bg-red-100 rounded-2xl">
+        ❌ Errore nell'invio. Riprova più tardi.
+    </div>
+    <div id="formNotConnection" class="hidden text-yellow-600 absolute top-5 left-5 p-3 bg-yellow-100 rounded-2xl">
+        ⚠️ Errore di connessione, riprova più tardi.
+    </div>
+    <footer class="flex flex-col gap-2 items-center justify-center py-8 bg-black/30 backdrop-blur-[10px] text-white/80">
+        <ul class="flex justify-center gap-10">
+            <li>
+                <a href="https://www.linkedin.com/in/fabio-doria-6957b8371/" target="_blank"
+                    class="text-white hover:text-[#FF0642] transition-colors duration-300">
+                    LinkedIn
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/DoriaFabio" target="_blank" class="text-white hover:text-[#FF0642] transition-colors duration-300">
+                    GitHub
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/fabio_.doria/" target="_blank" class="text-white hover:text-[#FF0642] transition-colors duration-300">
+                    Instagram
+                </a>
+            </li>
+            <li>
+                <a href="./privacy.html" target="_blank"
+                    class="text-white hover:text-[#FF0642] transition-colors duration-300">
+                    Privacy Policy
+                </a>
+            </li>
+        </ul>
+        <p class="text-[14px]">© 2026 Fabio Doria. Tutti i diritti riservati</p>
+    </footer>
+    <script src="./tech.js"></script>
+    <script src="./overlay.js"></script>
+    <script src="./project.js"></script>
+    <script src="./sendmail.js"></script>
 </body>
 
 </html>

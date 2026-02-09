@@ -2,27 +2,27 @@ const projects = [
     {
         title: "Bool B&B",
         description: "Replica of a webApp for searching and managing rental properties.",
-        imageUrl: "./image/mockup.png",
+        imageUrl: "./image/BoolBnB.png",
         projectUrl: "",
     },
     {
         title: "Boolflix",
         description: "Video streaming platform offering a wide selection of movies and TV series.",
-        imageUrl: "./image/mockup.png",
+        imageUrl: "./image/Boolflix.png",
         projectUrl: "",
     },
     {
         title: "Yogakounseling",
         description: "Showcase website for a yoga counseling service.",
-        imageUrl: "./image/mockup.png",
+        imageUrl: "./image/yogaKounseling.png",
         projectUrl: "",
     },
-    {
-        title: "Confronto risorse",
-        description: "Applicazione web per confrontare diverse risorse online in base a vari criteri.",
-        imageUrl: "./image/mockup.png",
-        projectUrl: "",
-    }
+    // {
+    //     title: "Confronto risorse",
+    //     description: "Applicazione web per confrontare diverse risorse online in base a vari criteri.",
+    //     imageUrl: "./image/mockup.png",
+    //     projectUrl: "",
+    // }
 ];
 
 const projectsContainer = document.getElementById('projects-container');
