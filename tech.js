@@ -17,7 +17,7 @@ const techContainer = document.getElementById('tech-container');
 
 techSkills.forEach(tech => {
     const card = document.createElement('div');
-    card.className = 'flex flex-col items-center justify-center gap-3 p-6 w-32 h-32 bg-white/10 rounded-xl backdrop-blur-sm hover:bg-white/20 transition-all duration-300';
+    card.className = 'flex flex-col items-center justify-center gap-3 p-6 w-32 h-32 bg-white/10 rounded-xl backdrop-blur-sm transition-all duration-500 translate-y-8 hover:bg-white/20 hover:-translate-y-1 hover:scale-102 hover:shadow-xl hover:shadow-[#FF0642]/20 ';
 
     card.innerHTML = `
         <img src="./image/loghi/${tech.image}" alt="${tech.name}" class="w-12 h-12 object-contain">

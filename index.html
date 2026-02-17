@@ -26,7 +26,7 @@
         </div>
     </aside>
 
-    <!-- Sidebar Overlay -->
+    <!--? Sidebar Overlay -->
     <div id="overlay-sidebar" class="fixed inset-0 top-22 bg-black bg-opacity-70 hidden lg:hidden z-30"></div>
 
     <!--! ==================== HEADER ==================== -->
@@ -74,7 +74,7 @@
             </div>
 
             <!--? Hero Image -->
-            <div class="lg:w-1/2 flex justify-center mt-20 lg:mt-0">
+            <div class="lg:w-1/2 flex justify-center mt-10 lg:mt-0">
                 <div class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full p-2 gradient-accent">
                     <div class="w-full h-full rounded-full bg-gray-300 flex items-center justify-center">
                         <img src="./image/fabio.png" alt="Fabio Doria"
@@ -199,8 +199,8 @@
                 <div class="mt-2 flex">
                     <input type="checkbox" id="privacyConsent" required
                         class="w-4 mx-1 accent-blue-700 focus:ring-blue-500">
-                    <label for="privacyConsent" class="text-[16px]">
-                        Ho letto e accetto la
+                    <label for="privacyConsent" class="md:text-[16px] text-[13px] text-gray-300">
+                        I have read and accept the
                         <a href="./privacy.html"
                             class="underline text-gray-300 hover:text-red-500 transition-colors duration-300"
                             target="_blank">Privacy Policy</a>.
@@ -218,16 +218,16 @@
     </section>
     <!--! Notifica !-->
     <div id="formResponse" class="hidden text-green-700 absolute top-5 left-5 p-3 bg-amber-50 rounded-2xl z-50">
-        ✅ Messaggio inviato con successo!
+        ✅ message sent successfully!
     </div>
     <div id="formResponseError" class="hidden text-red-700 absolute top-5 left-5 p-3 bg-red-100 rounded-2xl">
-        ❌ Errore nell'invio. Riprova più tardi.
+        ❌ An error occurred while sending the message, please try again later.
     </div>
     <div id="formNotConnection" class="hidden text-yellow-600 absolute top-5 left-5 p-3 bg-yellow-100 rounded-2xl">
-        ⚠️ Errore di connessione, riprova più tardi.
+        ⚠️ It seems you are not connected to the internet. Please check your connection and try again.
     </div>
-    <footer class="flex flex-col gap-2 items-center justify-center py-8 bg-black/30 backdrop-blur-[10px] text-white/80">
-        <ul class="flex justify-center gap-10">
+    <footer class="flex flex-col gap-2 items-center justify-center py-8 bg-black/30 backdrop-blur-[10px] text-white/80 text-center">
+        <ul class="flex justify-center gap-10 text-[12px] md:text-[16px]">
             <li>
                 <a href="https://www.linkedin.com/in/fabio-doria-6957b8371/" target="_blank"
                     class="text-white hover:text-[#FF0642] transition-colors duration-300">
@@ -251,7 +251,7 @@
                 </a>
             </li>
         </ul>
-        <p class="text-[14px]">© 2026 Fabio Doria. Tutti i diritti riservati</p>
+        <p class="md:text-[14px] text-[12px]">© 2026 Fabio Doria. All right reserved</p>
     </footer>
     <script src="./tech.js"></script>
     <script src="./overlay.js"></script>
