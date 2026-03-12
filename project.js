@@ -52,6 +52,22 @@ const projects = [
         ],
         githubUrl: "https://github.com/DoriaFabio/yogaKounseling",
         liveUrl: "https://yogakounseling.it/"
+    },
+    {
+        id: "campo-minato",
+        title: "Campo Minato",
+        description: "Classic Minesweeper game built with JavaScript.",
+        imageUrl: "./image/campoMinato.png",
+        imageDetailUrl: "./image/campoMinatoDetail.png",
+        detailedDescription: "Campo Minato is a classic Minesweeper game built with JavaScript. The game features a grid-based layout where players must uncover safe tiles while avoiding hidden mines.",
+        technologies: ["HTML5", "Tailwind CSS", "JavaScript"],
+        features: [
+            "Classic Minesweeper gameplay",
+            "Responsive design for all devices",
+            "Score tracking",
+        ],
+        githubUrl: "https://github.com/DoriaFabio/campo-minato",
+        liveUrl: "https://minatecamp.netlify.app/"
     }
 ];
 
