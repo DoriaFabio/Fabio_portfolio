@@ -9,7 +9,8 @@ const techSkills = [
     { name: 'Node.js', image: 'node.png' },
     { name: 'Express', image: 'express.png' },
     { name: 'REST API', image: 'rest-api.png' },
-    { name: 'MySQL', image: 'mysql.png' }
+    { name: 'MySQL', image: 'mysql.png' },
+    { name: 'Wordpress', image: 'wordpress.png' },
 ];
 
 // Genera le card delle tecnologie
